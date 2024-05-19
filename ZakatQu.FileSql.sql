@@ -1,5 +1,5 @@
 CREATE TABLE amil_zakat (
-    id_amil_zakat   INTEGER NOT NULL,
+    id_amil_zakat   SERIAL NOT NULL,
     nama_amil_zakat VARCHAR(50) NOT NULL,
     nik             VARCHAR(50) NOT NULL,
     alamat          VARCHAR(50) NOT NULL,
@@ -17,11 +17,11 @@ CREATE TABLE bentuk_zakat (
 ALTER TABLE bentuk_zakat ADD CONSTRAINT bentuk_zakat_pk PRIMARY KEY ( id_bentuk_zakat );
 
 CREATE TABLE distribusi_zakat (
-    id_distribusi_zakat                    INTEGER NOT NULL,
-    jumlah_paket_zakat                     INTEGER NOT NULL,
-    id_amil_zakat               INTEGER NOT NULL,
-    id_bentuk_zakat           INTEGER NOT NULL, 
-    id_status_distribusi INTEGER NOT NULL
+    id_distribusi_zakat     SERIAL NOT NULL,
+    jumlah_paket_zakat      INTEGER NOT NULL,
+    id_amil_zakat           INTEGER NOT NULL,
+    id_bentuk_zakat         INTEGER NOT NULL, 
+    id_status_distribusi    INTEGER NOT NULL
 );
 
 ALTER TABLE distribusi_zakat ADD CONSTRAINT distribusi_zakat_pk PRIMARY KEY ( id_distribusi_zakat );
@@ -34,37 +34,37 @@ CREATE TABLE jenis_zakat (
 ALTER TABLE jenis_zakat ADD CONSTRAINT jenis_zakat_pk PRIMARY KEY ( id_jenis_zakat );
 
 CREATE TABLE pembayaran_zakat (
-    id_pembayaran            INTEGER NOT NULL,
-    besar_pemberian                 INTEGER NOT NULL,
-    tanggal_pemberian               DATE NOT NULL,
-    id_amil_zakat                   INTEGER NOT NULL,
-    id_pemberi_zakat                INTEGER NOT NULL,
-    id_bentuk_zakat                 INTEGER NOT NULL,
-    id_jenis_zakat                  INTEGER NOT NULL
+    id_pembayaran           SERIAL NOT NULL,
+    besar_pemberian         INTEGER NOT NULL,
+    tanggal_pemberian       DATE NOT NULL,
+    id_amil_zakat           INTEGER NOT NULL,
+    id_pemberi_zakat        INTEGER NOT NULL,
+    id_bentuk_zakat         INTEGER NOT NULL,
+    id_jenis_zakat          INTEGER NOT NULL
 );
 
 ALTER TABLE pembayaran_zakat ADD CONSTRAINT pembayaran_zakat_pk PRIMARY KEY ( id_pembayaran );
 
 CREATE TABLE pemberi_zakat (
-    id_pemberi_zakat                                   INTEGER NOT NULL,
-    nama_pemberi_zakat                                 VARCHAR(50) NOT NULL,
-    nik                                                VARCHAR(16) NOT NULL,
-    alamat                                             VARCHAR(50) NOT NULL,
-    "RT/RW"                                            VARCHAR(10) NOT NULL,
-    nomor_telepon                                      VARCHAR(15) NOT NULL, 
+    id_pemberi_zakat        SERIAL NOT NULL,
+    nama_pemberi_zakat      VARCHAR(50) NOT NULL,
+    nik                     VARCHAR(16) NOT NULL,
+    alamat                  VARCHAR(50) NOT NULL,
+    "RT/RW"                 VARCHAR(10) NOT NULL,
+    nomor_telepon           VARCHAR(15) NOT NULL, 
     id_status_pembayaran_zakat INTEGER NOT NULL
 );
 
 ALTER TABLE pemberi_zakat ADD CONSTRAINT pemberi_zakat_pk PRIMARY KEY ( id_pemberi_zakat );
 
 CREATE TABLE penerima_zakat (
-    id_penerima_zakat                    INTEGER NOT NULL,
-    nama_kepala_keluarga                 VARCHAR(50) NOT NULL,
-    no__kk                               VARCHAR(16) NOT NULL,
-    alamat                               VARCHAR(50) NOT NULL,
-    "RT/RW"                              VARCHAR(10) NOT NULL,
-    nomor_telepon                        VARCHAR(15) NOT NULL, 
-    id_distribusi_zakat INTEGER NOT NULL
+    id_penerima_zakat       SERIAL NOT NULL,
+    nama_kepala_keluarga    VARCHAR(50) NOT NULL,
+    no__kk                  VARCHAR(16) NOT NULL,
+    alamat                  VARCHAR(50) NOT NULL,
+    "RT/RW"                 VARCHAR(10) NOT NULL,
+    nomor_telepon           VARCHAR(15) NOT NULL, 
+    id_distribusi_zakat     INTEGER NOT NULL
 );
 
 CREATE UNIQUE INDEX penerima_zakat__idx ON
