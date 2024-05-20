@@ -5,8 +5,7 @@ conn = psycopg2.connect(database='ZakatQu', user='postgres', password='Easyjust1
 cur = conn.cursor()
 
 def read_Daftar_Pemberi():
-    query= "Select * From pemberi_zakat ;"
-    cur.execute(query)
+    cur.execute("Select * From pemberi_zakat;")
     data=cur.fetchall()
 
     for i in data:
