@@ -1,5 +1,5 @@
 CREATE TABLE amil_zakat (
-    id_amil_zakat   INTEGER NOT NULL AUTO_INCREMENT,
+    id_amil_zakat   SERIAL NOT NULL,
     nama_amil_zakat VARCHAR(50) NOT NULL,
     nik             VARCHAR(50) NOT NULL,
     alamat          VARCHAR(50) NOT NULL,
