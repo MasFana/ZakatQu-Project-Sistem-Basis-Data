@@ -46,5 +46,7 @@ if __name__ == '__main__':
 
     switcher_menu(result)
 
+    print("Test")
+
 
 
