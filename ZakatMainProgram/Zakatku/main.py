@@ -1,17 +1,33 @@
 from typing import List
 
 from utils import switcher, terminal
+from utils.db import conn, cur
 from components import list
 from pages.login import login
 
 
 if __name__ == '__main__':
-    terminal.clear_screen()
+    iterate: int = 1
 
-    akun = login()
-    while(True) :
+    while(iterate <= 3) :
         terminal.clear_screen()
 
+        akun: List[str] = login()
+
+        if(len(akun) > 0) :
+            break
+
+        iterate += 1
+
+    if len(akun) < 1 :
+        terminal.clear_screen()
+
+        print("Silahkan buka aplikasi kembali")
+
+    while(len(akun) > 0) :
+        terminal.clear_screen()
+        
+        # Debug data akun dari login
         print(akun)
 
         list_menu: List[str] = ["Amil zakat", "Pembayaran Zakat", "Distribusi", "Pemberi Zakat", "Penerima Zakat", "Keluar dari aplikasi"]
@@ -20,6 +36,9 @@ if __name__ == '__main__':
         result: str = input("Pilih menu yang dituju : ")
         switcher.main_menu(result)
 
+
+    cur.close()
+    conn.close()
 
 
 
