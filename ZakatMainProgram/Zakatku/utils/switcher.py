@@ -1,8 +1,10 @@
+from typing import List
+
 from pages import login, distribusi, amil, pembayaran, pemberi, penerima
 
 
 
-def main_menu(var: str):
+def main_menu(var: str, akun: List[str] | str):
     # switcher = {
     #     '1': login.login(),
     #     '2': amil.amil(),
@@ -15,7 +17,7 @@ def main_menu(var: str):
     # Placeholder
     match var:
         case '1':
-            amil.amil()
+            amil.amil(akun)
         case '2':
             pembayaran.pembayaran()
         case '3':
