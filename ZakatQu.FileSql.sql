@@ -123,3 +123,16 @@ ALTER TABLE pemberi_zakat
 ALTER TABLE penerima_zakat
     ADD CONSTRAINT penerima_zakat_distribusi_zakat_fk FOREIGN KEY ( id_distribusi_zakat )
         REFERENCES distribusi_zakat ( id_distribusi_zakat );
+
+INSERT INTO amil_zakat (nama_amil_zakat, nik, alamat, "RT/RW", nomor_telepon) values ('Reza Thoriqis Sulthon', '3509065508124739', 'Jl Letjen Panjaitan No.30', '03/20', '082123456789')
+INSERT INTO amil_zakat (nama_amil_zakat, nik, alamat, "RT/RW", nomor_telepon) values ('Ade Kurniawan', '3917548206530905', 'Jl Trunoyojo VII/III Linkungan Sawahan Cantikan', '03/20', '085712345678')
+INSERT INTO amil_zakat (nama_amil_zakat, nik, alamat, "RT/RW", nomor_telepon) values ('Budi Wijaya', '3501974286503914', 'Jl. Merdeka No. 10, Kelurahan Gambir', '04/20', '081234567890')
+INSERT INTO amil_zakat (nama_amil_zakat, nik, alamat, "RT/RW", nomor_telepon) values ('Cahaya Kusuma', '3508416279530684', 'Jl. Kenanga No. 15, Kelurahan Sunter Jaya', '04/17', '082156789012')
+
+INSERT INTO pemberi_zakat (nama_pemberi_zakat, nik, alamat, "RT/RW", nomor_telepon, id_status_pembayaran_zakat) values ('Fajar Hidayat', '3509724186530729', 'Jl. Trunojoyo VII No. 31', '03/20', '082267890123', 1)
+INSERT INTO pemberi_zakat (nama_pemberi_zakat, nik, alamat, "RT/RW", nomor_telepon, id_status_pembayaran_zakat) values ('Indah Permata Sari', '3502894716503928', 'Jl. Trunojoyo VII No. 47', '03/20', '082378901234', 1)
+INSERT INTO pemberi_zakat (nama_pemberi_zakat, nik, alamat, "RT/RW", nomor_telepon, id_status_pembayaran_zakat) values ('Joko Susilo', '3504719286530741', 'Jl. Trunojoyo VII No. 101', '03/20','085189012345', 2)
+INSERT INTO pemberi_zakat (nama_pemberi_zakat, nik, alamat, "RT/RW", nomor_telepon, id_status_pembayaran_zakat) values ('Mila Setiawan', '3506184927530816', 'Jl. Trunojoyo VII No. 88', '03/20', '085290123456', 1)
+
+INSERT INTO status_pembayaran_zakat (id_status_pembayaran_zakat, nama_pembayaran_zakat) values (1, 'Sudah Membayar')
+INSERT INTO status_pembayaran_zakat (id_status_pembayaran_zakat, nama_pembayaran_zakat) values (2, 'Belum Membayar')
