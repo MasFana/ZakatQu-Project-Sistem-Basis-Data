@@ -6,8 +6,11 @@ from components import list
 from pages.login import login
 
 
+
 if __name__ == '__main__':
     iterate: int = 1
+
+
 
     while(iterate <= 3) :
         terminal.clear_screen()
@@ -19,10 +22,14 @@ if __name__ == '__main__':
 
         iterate += 1
 
+
+
     if len(akun) < 1 :
         terminal.clear_screen()
 
         print("Silahkan buka aplikasi kembali")
+
+        
 
     while(len(akun) > 0) :
         terminal.clear_screen()
@@ -35,6 +42,7 @@ if __name__ == '__main__':
 
         result: str = input("Pilih menu yang dituju : ")
         switcher.main_menu(result)
+
 
 
     cur.close()

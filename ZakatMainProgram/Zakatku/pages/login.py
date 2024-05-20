@@ -4,6 +4,8 @@ from typing import List
 from utils import terminal
 from utils.db import login_query
 
+
+
 def login() -> List[str]:
     terminal.clear_screen()
 

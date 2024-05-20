@@ -1,6 +1,7 @@
 from pages import login, distribusi, amil, pembayaran, pemberi, penerima
 
 
+
 def main_menu(var: str):
     # switcher = {
     #     '1': login.login(),
