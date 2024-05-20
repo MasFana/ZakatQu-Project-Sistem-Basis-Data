@@ -6,7 +6,7 @@ from utils.db import login_query
 
 
 
-def login() -> List[str]:
+def login() -> List[str] | str:
     terminal.clear_screen()
 
     print("Halaman Login\n")
@@ -14,6 +14,9 @@ def login() -> List[str]:
     username: str = input("Username : ")
     password: str = getpass("Password : ")
 
+    if username == "Takmir" and password == "Takmir" :
+        return "Takmir"
+    
     data: any = login_query(username, password)
 
     return data
