@@ -14,16 +14,14 @@ def main_menu(var: str):
     # Placeholder
     match var:
         case '1':
-            login.login()
-        case '2':
             amil.amil()
-        case '3':
+        case '2':
             pembayaran.pembayaran()
-        case '4':
+        case '3':
             distribusi.distribusi()
-        case '5':
+        case '4':
             pemberi.pemberi()
-        case '6':
+        case '5':
             penerima.penerima()
         case _:
             print("Input tidak valid!")

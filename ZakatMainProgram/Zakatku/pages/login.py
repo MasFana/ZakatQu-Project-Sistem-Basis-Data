@@ -14,4 +14,4 @@ def login() -> List[str]:
 
     data: any = login_query(username, password)
 
-    print(data)
+    return data
