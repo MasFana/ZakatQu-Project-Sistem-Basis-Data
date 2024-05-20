@@ -4,7 +4,7 @@ from utils import switcher, terminal
 from utils.db import conn, cur
 from components import list
 from pages.login import login
-
+from pages.pemberi import pemberi
 
 
 if __name__ == '__main__':
