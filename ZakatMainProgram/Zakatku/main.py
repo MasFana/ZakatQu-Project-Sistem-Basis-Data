@@ -1,6 +1,7 @@
 from menu import login, distribusi, amil, pembayaran, pemberi, penerima
+from typing import List
 
-def print_menu(menus: list[str]):
+def print_menu(menus: List[str]):
 
     for idx, menu in enumerate(menus):
         print(f"{idx+1}. {menu}")
@@ -37,7 +38,7 @@ def switcher_menu(var: str):
 
 if __name__ == '__main__':
 
-    list_menu: list[str] = ["Login", "Amil zakat", "Pembayaran Zakat", "Distribusi", "Pemberi Zakat", "Penerima Zakat"]
+    list_menu: List[str] = ["Login", "Amil zakat", "Pembayaran Zakat", "Distribusi", "Pemberi Zakat", "Penerima Zakat"]
 
     print_menu(list_menu)
 
