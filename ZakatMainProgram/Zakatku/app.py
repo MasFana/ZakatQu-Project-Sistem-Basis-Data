@@ -4,7 +4,7 @@ from utils import switcher, terminal
 from utils.db import conn, cur
 from components import list
 from pages.login import login
-
+from pages.pemberi import pemberi
 
 
 if __name__ == '__main__':
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     while(iterate <= 3) :
         terminal.clear_screen()
 
-        akun: List[str] | str = login()
+        akun: list[tuple] | str = login()
 
         if(len(akun) > 0) :
             break
@@ -41,7 +41,7 @@ if __name__ == '__main__':
         list.print_list(list_menu)
 
         result: str = input("Pilih menu yang dituju : ")
-        switcher.main_menu(result)
+        switcher.main_menu(result, akun)
 
 
 

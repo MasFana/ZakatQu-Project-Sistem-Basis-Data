@@ -17,6 +17,6 @@ def login() -> List[str] | str:
     if username == "Takmir" and password == "Takmir" :
         return "Takmir"
     
-    data: any = login_query(username, password)
+    data: list[tuple] = login_query(username, password)
 
     return data
