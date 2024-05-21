@@ -15,7 +15,7 @@ if __name__ == '__main__':
     while(iterate <= 3) :
         terminal.clear_screen()
 
-        akun: list[tuple] | str = login()
+        akun: List[str] | str = login()
 
         if(len(akun) > 0) :
             break
