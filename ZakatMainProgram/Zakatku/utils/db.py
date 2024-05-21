@@ -4,6 +4,18 @@ conn = psycopg2.connect(database='Zakatqu', user='postgres', password='rendydp42
 
 cur = conn.cursor()
 
+def login_query(username: str, password: str) -> any :
+    pass
+
+def login_query(username: str, password: str) -> list[tuple] :
+    cur.execute(f"SELECT * FROM amil_zakat WHERE left(nik, 5)= '{username}' AND right(nik, 5)= '{password}';")
+    data = cur.fetchall()
+
+    # cur.close()
+    # conn.close()
+
+    return data
+
 def read_Daftar_Pemberi():
     cur.execute("Select * From pemberi_zakat;")
     data=cur.fetchall()
@@ -60,15 +72,34 @@ def Hapus_data_Pemberi():
     print("Data berhasil dihapus")
 
 
-def login_query(username: str, password: str) -> list[tuple] :
-    cur.execute(f"SELECT * FROM amil_zakat WHERE left(nik, 5)= '{username}' AND right(nik, 5)= '{password}';")
+def QueryInput(InputQuery, NamaTabel, NamaKolom):
+    cur.execute("INSERT INTO " + NamaTabel + " " + f'({NamaKolom})' + " VALUES " + f'{InputQuery}'.replace("[", "(").replace("]", ")"))
+    conn.commit()
+
+def searchPemberi(Input):
+    cur.execute(f"SELECT * FROM pemberi_zakat where nama_pemberi_zakat = '{Input}';")
     data = cur.fetchall()
+    if data:
+        return data
+    else:
+        return "Data Tidak Ada"
 
-    # cur.close()
-    # conn.close()
-
-    return data
-
+def searchBentukZakat(Input):
+    cur.execute(f"SELECT * FROM bentuk_zakat where id_bentuk_zakat = '{Input}';")
+    data = cur.fetchall()
+    if data:
+        return data
+    else:
+        return "Data Tidak Ada"
+    
+def searchJenisZakat(Input):
+    cur.execute(f"SELECT * FROM jenis_zakat where id_jenis_zakat = '{Input}';")
+    data = cur.fetchall()
+    if data:
+        return data
+    else:
+        return "Data Tidak Ada"
+    
 def read_amil() -> list[tuple] :
     cur.execute(f"SELECT * FROM amil_zakat")
     data = cur.fetchall()
